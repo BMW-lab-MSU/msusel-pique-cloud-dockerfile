@@ -39,7 +39,7 @@ src/main/resources/nvd-dictionary.json
 
 # tool output files
 tool-out/*
-output/tool-out/alpine/*
+output/*
 
 # Test output: 
 output/test/alpine:3.18_compact_evalResults.json
