@@ -70,12 +70,12 @@ public class Wrapper {
                 System.exit(0);
             }
 
-            String nvdDictionaryPath = Paths.get(prop.getProperty("nvd-dictionary.location")).toString();
-            File f = new File(nvdDictionaryPath);
-            if (!f.isFile()) {
-                System.out.println("Error: the National Vulnerability Database must be downloaded before deriving or evaluating. Use --help for more information.");
-                System.exit(1);
-            }
+//            String nvdDictionaryPath = Paths.get(prop.getProperty("nvd-dictionary.location")).toString();
+//            File f = new File(nvdDictionaryPath);
+//            if (!f.isFile()) {
+//                System.out.println("Error: the National Vulnerability Database must be downloaded before deriving or evaluating. Use --help for more information.");
+//                System.exit(1);
+//            }
 
             if ("derive".equals(runType)) {
                 if (fileName != null) {
