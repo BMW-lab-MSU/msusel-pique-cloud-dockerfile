@@ -38,14 +38,14 @@ RUN source .venv/bin/activate
 RUN python3 -m pip install argparse requests --break-system-packages
 
 WORKDIR "/home"
-RUN git clone https://github.com/MSUSEL/msusel-pique-cloud-dockerfile
+RUN git clone https://github.com/BMW-lab-MSU/msusel-pique-cloud-dockerfile
 WORKDIR "/home/msusel-pique-cloud-dockerfile"
 
 # build pique cloud dockerfile
 RUN mvn package -Dmaven.test.skip
 
 # Figure out a better way to work with the NVD database
-ADD src/main/resources/nvd-dictionary.json src/main/resources/nvd-dictionary.json
+# ADD src/main/resources/nvd-dictionary.json src/main/resources/nvd-dictionary.json
 
 # create input directory
 RUN mkdir "/input"
