@@ -140,6 +140,7 @@ def main():
     try:
         with open(nvd_api_key_path) as f:
             nvd_api_key = f.readline().rstrip()
+            print(nvd_api_key)
     except Error as e:
         print(f"Error - opening nvd api key{e}")
         exit(1)
