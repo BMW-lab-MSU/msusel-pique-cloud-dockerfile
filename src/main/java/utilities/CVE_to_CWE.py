@@ -136,18 +136,18 @@ def main():
         exit(1)
 
     result = []
-    if nvd_api_key_path != "":
-        try:
-            with open(nvd_api_key_path) as f:
-                nvd_api_key = f.readline().rstrip()
-        except Error as e:
-            print(f"Error - opening nvd api key{e}")
-            exit(1)
-        result = get_cwe_for_cves_api_direct(cves, github_token, nvd_api_key)
-    else:
-        with open(nvd_dict_path, "r") as json_file:
-            nvd_dict = json.load(json_file)
-        result = get_cwe_for_cves(cves, github_token, nvd_dict)
+    # if nvd_api_key_path != "":
+    try:
+        with open(nvd_api_key_path) as f:
+            nvd_api_key = f.readline().rstrip()
+    except Error as e:
+        print(f"Error - opening nvd api key{e}")
+        exit(1)
+    result = get_cwe_for_cves_api_direct(cves, github_token, nvd_api_key)
+    # else:
+    #     with open(nvd_dict_path, "r") as json_file:
+    #         nvd_dict = json.load(json_file)
+    #     result = get_cwe_for_cves(cves, github_token, nvd_dict)
 
 
     # LOLOL super bad tech debt, some of the worst I have seen. If you remove this, the program fails.
