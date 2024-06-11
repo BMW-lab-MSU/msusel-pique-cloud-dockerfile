@@ -135,6 +135,7 @@ public class GrypeWrapper extends Tool implements ITool {
             // use nvd dump or not. NVD dump avoids timeout issues with NVD but DB dump load takes a while too....
             // Trying the raw NVD DB dump for now, might change later
 //            String[] findingNames = helperFunctions.getCWEFromNVDDatabaseDump(cveList, this.githubTokenPath);
+            System.out.println(this.nvdAPIKeyPath);
             String[] findingNames = helperFunctions.getCWEFromNVDAPIDirectly(cveList, this.githubTokenPath, this.nvdAPIKeyPath);
 
             for (int i = 0; i < findingNames.length; i++) {
