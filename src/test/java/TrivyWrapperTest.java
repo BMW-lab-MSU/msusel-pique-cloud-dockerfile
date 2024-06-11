@@ -26,7 +26,7 @@ public class TrivyWrapperTest {
     public static void setup(){
         //load properties
         Properties prop = PiqueProperties.getProperties();
-        trivyWrapper = new TrivyWrapper(prop.getProperty("github-token-path"));//, prop.getProperty("nvd-api-key-path"));
+        trivyWrapper = new TrivyWrapper(prop.getProperty("github-token-path"), prop.getProperty("nvd-api-key-path"));//, prop.getProperty("nvd-api-key-path"));
 
         //load docker marshaller
         DockerMarshallerTest.init();

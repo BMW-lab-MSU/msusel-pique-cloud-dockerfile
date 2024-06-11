@@ -55,10 +55,12 @@ package tool;
  public class TrivyWrapper extends Tool implements ITool  {
      private static final Logger LOGGER = LoggerFactory.getLogger(TrivyWrapper.class);
      private String githubTokenPath;
+     private String nvdTokenPath;
 
-     public TrivyWrapper(String githubTokenPath) {
+     public TrivyWrapper(String githubTokenPath, String nvdTokenPath) {
          super("Trivy", null);
          this.githubTokenPath = githubTokenPath;
+         this.nvdTokenPath = nvdTokenPath;
      }
 
      // Methods
