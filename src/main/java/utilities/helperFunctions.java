@@ -139,7 +139,6 @@ public class helperFunctions {
 		Properties prop = PiqueProperties.getProperties();
 		String pathToScript = prop.getProperty("cveTocwe.location");
 		String pathToNVDDict = prop.getProperty("nvd-dictionary.location");
-		String
 
 		// Convert each cveList to a comma-separated string
 		StringBuilder cveString = new StringBuilder();
