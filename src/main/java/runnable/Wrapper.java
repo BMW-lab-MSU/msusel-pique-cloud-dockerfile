@@ -78,13 +78,13 @@ public class Wrapper {
 //            }
 
             if ("derive".equals(runType)) {
-                if (fileName != null) {
-                    throw new IllegalArgumentException("Incorrect input parameters given. Use --help for more information");
-                }
-                else {
+//                if (fileName != null) {
+//                    throw new IllegalArgumentException("Incorrect input parameters given. Use --help for more information");
+//                }
+//                else {
                     // kick off deriver
                     new QualityModelDeriver();
-                }
+//                }
             }
             else if ("evaluate".equals(runType)) {
                 new SingleProjectEvaluator(fileName);
