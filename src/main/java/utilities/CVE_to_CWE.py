@@ -49,10 +49,10 @@ def get_cwe_api_direct(cve, github_token, api_key):
     if api_key == '':
         response = requests.get(url=url)
     else:
-        response = requests.get(url=url, headers={"apiKey" : api_key})
+        response = requests.get(url=url, headers={"apiKey" : api_key, 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'})
 
     if response.status_code != 200:
-        return "Bad Request - " + str(response.status_code)
+        return "Bad Request - " + str(response.status_code) + str(response)
     else:
         data = response.json() #json madness
         if len(data['vulnerabilities']) != 0 and 'cve' in data['vulnerabilities'][0] and 'weaknesses' in data['vulnerabilities'][0]['cve']:
