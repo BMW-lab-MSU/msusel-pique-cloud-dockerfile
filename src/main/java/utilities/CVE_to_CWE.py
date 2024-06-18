@@ -62,7 +62,7 @@ def get_cwe_api_direct(cve, github_token, api_key):
                         return "CWE-unknown" + w['description'][0]['value']
                     return w['description'][0]['value']
 
-    return "CWE-unknown last" +str(response.status_code)
+    return "CWE-unknown last" + data
 
 
     return True
