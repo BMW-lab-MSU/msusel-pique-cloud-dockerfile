@@ -59,7 +59,7 @@ def get_cwe_api_direct(cve, github_token, api_key):
             for w in data['vulnerabilities'][0]['cve']['weaknesses']:
                 if 'description' in w and len(w['description']) != 0:
                     if w['description'][0]['value'] == "NVD-CWE-noinfo" or w['description'][0]['value'] == "NVD-CWE-Other":
-                        return "CWE-unknown" + str(response.status_code)
+                        return "CWE-unknown" + w['description'][0]['value']
                     return w['description'][0]['value']
 
     return "CWE-unknown last" +str(response.status_code)
