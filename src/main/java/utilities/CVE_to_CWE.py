@@ -49,7 +49,7 @@ def get_cwe_api_direct(cve, github_token, api_key):
     if api_key == '':
         response = requests.get(url=url)
     else:
-        response = requests.get(url=url, headers={"apiKey" : api_key, 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'})
+        response = requests.get(url=url, headers={"apiKey" : api_key})
 
     if response.status_code != 200:
         return "Bad Request - " + str(response.status_code) + str(response)
@@ -59,10 +59,10 @@ def get_cwe_api_direct(cve, github_token, api_key):
             for w in data['vulnerabilities'][0]['cve']['weaknesses']:
                 if 'description' in w and len(w['description']) != 0:
                     if w['description'][0]['value'] == "NVD-CWE-noinfo" or w['description'][0]['value'] == "NVD-CWE-Other":
-                        return "CWE-unknown"
+                        return "CWE-unknown" + str(response.status_code)
                     return w['description'][0]['value']
 
-    return "CWE-unknown"
+    return "CWE-unknown last" +str(response.status_code)
 
 
     return True
