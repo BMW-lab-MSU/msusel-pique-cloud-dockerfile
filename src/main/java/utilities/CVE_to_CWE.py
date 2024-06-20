@@ -28,7 +28,7 @@ def ghsa_to_cwe(ghsa, github_token):
 
     response = requests.post(url='https://api.github.com/graphql', json={'query': query}, headers={'Authorization': 'token %s' % github_token})
     if response.status_code != 200:
-        return "Bad Request - " + str(response.status_code)
+        return "Bad Request - "
     else:
         ghsa_data = response.json()
         result = []
