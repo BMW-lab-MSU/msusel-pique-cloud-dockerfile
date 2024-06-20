@@ -135,7 +135,7 @@ public class helperFunctions {
 	 * @param cveList An ArrayList<String> of one or more CVE names
 	 * @return An array of CWEs associated with the given CVEs
 	 */
-	public static String[] getCWEFromNVDDatabaseDump(ArrayList<String> cveList, String githubTokenPath, String nvdTokenPath) {
+	public static String[] getCWEFromNVDDatabaseDump(ArrayList<String> cveList, String githubTokenPath ) {
 		Properties prop = PiqueProperties.getProperties();
 		String pathToScript = prop.getProperty("cveTocwe.location");
 		String pathToNVDDict = prop.getProperty("nvd-dictionary.location");
@@ -152,8 +152,8 @@ public class helperFunctions {
 		if (cveString.toString().isEmpty()) {
 			return new String[]{};
 		}
-//		String[] cmd = {"python3", pathToScript, "--list", cveString.toString(), "--github_token", githubTokenPath, "--nvdDict", pathToNVDDict};
-		String[] cmd = {"python3", pathToScript, "--list", cveString.toString(), "--github_token", githubTokenPath, "--use_api", nvdTokenPath};
+		String[] cmd = {"python3", pathToScript, "--list", cveString.toString(), "--github_token", githubTokenPath, "--nvdDict", pathToNVDDict};
+
 
 		System.out.println("executing command: " + Arrays.toString(cmd));
 		String cwe = "";

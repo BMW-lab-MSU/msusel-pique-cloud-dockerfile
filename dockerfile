@@ -45,7 +45,7 @@ WORKDIR "/home/msusel-pique-cloud-dockerfile"
 RUN mvn package -Dmaven.test.skip
 
 # Figure out a better way to work with the NVD database
-# ADD src/main/resources/nvd-dictionary.json src/main/resources/nvd-dictionary.json
+ADD src/main/resources/nvd-dictionary.json src/main/resources/nvd-dictionary.json
 
 # create input directory
 RUN mkdir "/input"
