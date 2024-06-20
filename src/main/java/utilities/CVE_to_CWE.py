@@ -49,7 +49,7 @@ def get_cwe_api_direct(cve, github_token, api_key):
     if api_key == '':
         response = requests.get(url=url)
     else:
-        response = requests.get(url=url, headers={"apiKey" : api_key, ""})
+        response = requests.get(url=url, headers={"apiKey" : api_key})
 
     if response.status_code != 200:
         return "Bad Request - " + str(response.status_code) + str(response)
