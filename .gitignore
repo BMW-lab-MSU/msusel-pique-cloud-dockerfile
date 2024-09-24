@@ -43,3 +43,4 @@ output/*
 
 # Test output: 
 output/test/alpine:3.18_compact_evalResults.json
+/trivy-test/
