@@ -133,7 +133,7 @@ run() {
     get_authentication_keys
     generate_sample_target
 
-    docker run -it --rm -v "/var/run/docker.sock:/var/run/docker.sock:rw" -v "$WORKDIR"/input:/input -v "$WORKDIR"/output:/output msusel/pique-cloud-dockerfile:latest
+    docker run -it --rm -v "/var/run/docker.sock:/var/run/docker.sock:rw" -v "$WORKDIR"/input:/input -v "$WORKDIR"/output:/output pique-cloud-docker:custom
 }
 run
 

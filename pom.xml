@@ -37,7 +37,7 @@
     </parent>
 
     <artifactId>msusel-pique-cloud-dockerfile</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.1_ML</version>
     <packaging>jar</packaging>
     <description>MSU PIQUE quality model implementation for dockerfiles</description>
     <url>https://msusel.github.io</url>
@@ -123,7 +123,7 @@
         <dependency>
             <groupId>edu.montana.gsoc.msusel</groupId>
             <artifactId>msusel-pique</artifactId>
-            <version>0.9.5_2</version>
+            <version>1.0.0_ML</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->

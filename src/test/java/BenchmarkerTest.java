@@ -35,7 +35,7 @@ public class BenchmarkerTest {
     public static void setup(){
         try {
             benchmarker = new CloudBenchmarker();
-            prop = PiqueProperties.getProperties("/home/derek/msusel/msusel-pique-cloud-dockerfile/src/test/resources/pique-test-properties.properties");
+            prop = PiqueProperties.getProperties("./src/test/resources/pique-test-properties.properties");
         }catch (Exception e){
             System.out.println("Error initializing properties in setup");
         }
